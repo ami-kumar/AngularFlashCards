@@ -14,6 +14,12 @@ app.controller('FlashCardController', function( $scope ) {
 	}
 	$scope.answerQuestion = function(theAnswer) {
 		console.log(theAnswer)
+		$scope.answered = true
+		if (theAnswer.correct) {
+			$scope.answeredCorrectly = true
+		} else {
+			$scope.answeredCorrectly = false
+		}
 	}
 	
 })
