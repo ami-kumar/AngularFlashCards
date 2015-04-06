@@ -9,7 +9,8 @@
         <script src = "app.js"></script>
     </head>
     <body>
-		<div ng-app="FlashCards">
+		<div ng-app="FlashCards" ng-controller = "MainController">
+			{{flashCards}}
 			<div class="flash-card" ng-controller = "FlashCardController">
 			    <h1>{{flashCard.question}}</h1>
 			    <ul class="flash-card-answers">
@@ -18,6 +19,10 @@
 			    	</li>
 			    </ul>
 			</div>
+			<h2 class="answer-feedback" ng-show="answered">
+			    <span ng-show="answeredCorrectly">Yeah, you got it right!</span>
+			    <span ng-show="!answeredCorrectly">Nope, you got it wrong.</span>
+			</h2>
 	    </div>
     </body>
 </html>
